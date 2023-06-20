@@ -1,9 +1,9 @@
 import * as core from '@actions/core';
-import {Config, NodeSSH} from 'node-ssh';
+import { Config, NodeSSH } from 'node-ssh';
 import fsPath from 'path';
-import {SFTPStream} from 'ssh2-streams';
+import { SFTPStream } from 'ssh2-streams';
 import fs from 'fs';
-import {keyboardFunction} from './keyboard';
+import { keyboardFunction } from './keyboard';
 import path from 'path';
 
 async function run() {
@@ -157,7 +157,7 @@ async function putDirectory(
   verbose = false,
   recursive = true
 ) {
-  const failed: {local: string; remote: string}[] = [];
+  const failed: { local: string; remote: string }[] = [];
   const successful = [];
   const status = await ssh.putDirectory(local, remote, {
     recursive: recursive,
@@ -169,12 +169,12 @@ async function putDirectory(
         if (verbose) {
           console.log(`❕copy failed for ${localPath}.`);
         }
-        failed.push({local: localPath, remote: remotePath});
+        failed.push({ local: localPath, remote: remotePath });
       } else {
         if (verbose) {
           console.log(`✔ successfully copied ${localPath}.`);
         }
-        successful.push({local: localPath, remote: remotePath});
+        successful.push({ local: localPath, remote: remotePath });
       }
     }
   });
@@ -204,7 +204,6 @@ async function cleanDirectory(ssh: NodeSSH, remote: string, verbose = true) {
     console.error(`⚠️ An error happened:(.`, error.message, error.stack);
     ssh.dispose();
     core.setFailed(error.message);
-
   }
 }
 
@@ -239,9 +238,8 @@ async function putMany<T>(
   }
 }
 
-process.on('uncaughtException', (err) => {
-  if (err['code'] !== 'ECONNRESET')
-    throw err
-})
+process.on('uncaughtException', err => {
+  if (err['code'] !== 'ECONNRESET') throw err;
+});
 
 run();

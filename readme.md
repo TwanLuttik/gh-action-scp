@@ -1,3 +1,6 @@
+
+Note: This is a clone of [this gh action](https://github.com/garygrossgarten/github-action-scp) but hasn't been updated in a while and needing to fix a few things that is blocking 
+
 # GitHub Action SCP
 
 Simple GitHub Action to copy a folder or single file to a remote server using SSH. This is working with the latest [GitHub Actions](https://github.com/features/actions).
@@ -8,7 +11,7 @@ Simple GitHub Action to copy a folder or single file to a remote server using SS
 
 ```yml
 - name: Copy folder content recursively to remote
-        uses: garygrossgarten/github-action-scp@release
+        uses: garygrossgarten/github-action-scp@**release**
         with:
           local: test
           remote: scp/directory
