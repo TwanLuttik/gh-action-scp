@@ -11,7 +11,7 @@ Simple GitHub Action to copy a folder or single file to a remote server using SS
 
 ```yml
 - name: Copy folder content recursively to remote
-        uses: garygrossgarten/github-action-scp@**release**
+        uses: TwanLuttik/gh-action-scp
         with:
           local: test
           remote: scp/directory
@@ -25,7 +25,7 @@ Simple GitHub Action to copy a folder or single file to a remote server using SS
 
 ```yml
 - name: Copy single file to remote
-        uses: garygrossgarten/github-action-scp@release
+        uses: TwanLuttik/gh-action-scp
         with:
           local: test/oof.txt
           remote: scp/single/oof.txt
@@ -65,7 +65,7 @@ Check out [the workflow example](.github/workflows/scp-example-workflow.yml) for
 
 - **dotfiles** - _boolean_ - Include files with a leading `.` e.g. `.htaccess` **Default:** `false`
 
-- **privateKey** - _mixed_ - _Buffer_ or _string_ that contains a private key for either key-based or hostbased user authentication (OpenSSH format). **Default:** (none)
+- **privateKey** - _mixed_ - _Buffer_ or _string_ that contains a private key for either key-based or host based user authentication (OpenSSH format). **Default:** (none)
 
 - **passphrase** - _string_ - For an encrypted private key, this is the passphrase used to decrypt it. **Default:** (none)
 
