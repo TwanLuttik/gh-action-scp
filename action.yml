@@ -1,5 +1,5 @@
 name: Copy via ssh
-author: garygrossgarten
+author: TwanLuttik
 description: Github Action to copy a folder to a remote server using SSH
 inputs:
   local:
@@ -55,7 +55,7 @@ inputs:
     required: false
     default: false
 runs:
-  using: "node16"
+  using: "node18"
   main: "dist/index.js"
 branding:
   color: "purple"
