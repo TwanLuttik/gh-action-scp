@@ -1,4 +1,4 @@
-name: Copy via ssh
+name: SCP SSH Copy
 author: TwanLuttik
 description: Github Action to copy a folder to a remote server using SSH
 inputs:
